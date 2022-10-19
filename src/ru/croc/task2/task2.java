@@ -9,23 +9,28 @@ public class task2 {
             x/=1024;
             k++;
         }
-        if (k == 0) {
-            System.out.print(String.format("%.1f", x) + " B");
-        }
-        if(k == 1){
-            System.out.print(String.format("%.1f", x) + " KB");
-        }
-        else if(k == 2) {
-            System.out.print(String.format("%.1f", x) + " MB");
-        }
-        else if(k == 3){
-            System.out.print(String.format("%.1f", x) + " GB");
-        }
-        else if(k == 4) {
-            System.out.print(String.format("%.1f", x) + " TB");
-        }
-        else if(k == 5){
-            System.out.print(String.format("%.1f", x) + " PB");
+        switch (k){
+            case 0:
+                System.out.print(String.format("%.1f", x) + " B");
+                break;
+            case 1:
+                System.out.print(String.format("%.1f", x) + " KB");
+                break;
+            case 2:
+                System.out.print(String.format("%.1f", x) + " MB");
+                break;
+            case 3:
+                System.out.print(String.format("%.1f", x) + " GB");
+                break;
+            case 4:
+                System.out.print(String.format("%.1f", x) + " TB");
+                break;
+            case 5:
+                System.out.print(String.format("%.1f", x) + " PB");
+                break;
+            default:
+                System.out.print("File size is too large!");
+                break;
         }
     }
     public static void main(String[] args){
