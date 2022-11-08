@@ -8,7 +8,6 @@ public class Task9 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String enteredStr = args[0];
-        System.out.println(enteredStr);
         String[] words = enteredStr.split("/");
         ArrayList<String> words_list = new ArrayList<>(List.of(words));
         while(words_list.contains(".")){
