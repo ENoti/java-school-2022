@@ -1,6 +1,6 @@
 package ru.croc.task4;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Task4 {
     public static String asteriskBig(String line){
@@ -9,7 +9,7 @@ public class Task4 {
         int com_three = line.indexOf("*");
         String newLine;
 
-        if((com_one != -1 && com_two == -1) || (com_one == -1 && com_two != -1) || (com_one == -1 && com_two == -1 && com_three != -1))
+        if(com_one != -1 && com_two == -1 || com_one == -1 && com_two != -1 || com_one == -1 && com_three != -1)
             newLine = "";
         else
             newLine = line;
@@ -46,18 +46,19 @@ public class Task4 {
         }
         return newLine;
     }
-    public static  String deleteCom(String line){
-        line = asteriskSlash(line);
-        line = doubleSlash(line);
-        line = asteriskBig(line);
-        return line;
-    }
+
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        while(in.hasNext()){
-            String line = in.nextLine();
-            line = deleteCom(line);
-            System.out.println(line);
+        String str = "";
+        Scanner scanner = new Scanner(System.in);
+        while (scanner.hasNextLine()) { // До нажатия Ctrl + D
+            str = str + "\n" + scanner.nextLine();
+            str = asteriskBig(str);
+            str = asteriskSlash(str);
+            str = doubleSlash(str);
         }
+        scanner.close();
+        System.out.println(str);
+
+
     }
 }
