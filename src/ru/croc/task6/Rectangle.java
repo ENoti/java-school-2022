@@ -2,7 +2,7 @@ package ru.croc.task6;
 
 import java.util.Scanner;
 
-public class Rectangle extends Figure implements Movable{
+public class Rectangle extends Figure{
     protected int x1, y1;
     protected int x2, y2;
 
@@ -34,6 +34,10 @@ public class Rectangle extends Figure implements Movable{
 
     @Override
     public void move(int dx, int dy) {
-
+        x1 += dx;
+        x2 += dx;
+        y1 += dy;
+        y2 += dy;
     }
+
 }

@@ -1,7 +1,7 @@
 package ru.croc.task6;
 
 import java.util.Scanner;
-public class Circle extends Figure implements Movable{
+public class Circle extends Figure{
     protected int x;
     protected int y;
     protected int R;
@@ -30,6 +30,7 @@ public class Circle extends Figure implements Movable{
 
     @Override
     public void move(int dx, int dy) {
-
+        x += dx;
+        y += dy;
     }
 }

@@ -1,6 +1,6 @@
 package ru.croc.task6;
 
-public class Figure{
+public class Figure implements Movable{
     protected final int x;
     protected final int y;
 
@@ -18,5 +18,10 @@ public class Figure{
     }
     protected String coordinateInformation(){
         return " (<" + x +">, <" + y + ">): ";
+    }
+
+    @Override
+    public void move(int dx, int dy) {
+        System.out.println("move");
     }
 }
