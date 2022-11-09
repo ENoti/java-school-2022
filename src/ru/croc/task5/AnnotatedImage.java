@@ -1,7 +1,5 @@
 package ru.croc.task5;
 
-import ru.croc.task5.Annotation;
-
 class AnnotatedImage {
 
     private final String imagePath;

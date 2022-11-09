@@ -34,10 +34,6 @@ public class Rectangle extends Figure implements Movable{
 
     @Override
     public void move(int dx, int dy) {
-        x1 += dx;
-        x2 += dx;
-        y1 += dy;
-        y2 += dy;
-    }
 
+    }
 }

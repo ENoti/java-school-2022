@@ -20,8 +20,8 @@ public class Annotation {
         return figure.checkCoord(x, y);
     }
 
-    protected boolean getLabel(String label){
-        return this.Inscription.contains(label);
+    protected boolean getLabel(){
+        return this.Inscription.contains("meow");
     }
 
     @Override

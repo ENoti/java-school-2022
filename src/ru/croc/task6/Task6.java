@@ -11,7 +11,7 @@ public class Task6 {
             System.out.println(test[i]);
         }
         AnnotatedImage s = new AnnotatedImage("meow", test);
-        System.out.println(s.findByLabel("meow"));
+        System.out.println(s.findByLabel());
         //System.out.println(s.findByPoint(1,1));
     }
 }

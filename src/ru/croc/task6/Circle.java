@@ -30,7 +30,6 @@ public class Circle extends Figure implements Movable{
 
     @Override
     public void move(int dx, int dy) {
-        x += dx;
-        y += dy;
+
     }
 }

@@ -1,6 +1,6 @@
 package ru.croc.task6;
 
-public  class Figure{
+public class Figure{
     protected final int x;
     protected final int y;
 
