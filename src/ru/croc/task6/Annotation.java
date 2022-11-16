@@ -26,6 +26,6 @@ public class Annotation {
 
     @Override
     public String toString() {
-        return figure.shapeName() + figure.coordinateInformation() + enteringInscription();
+        return figure.coordinateInformation() + enteringInscription();
     }
 }

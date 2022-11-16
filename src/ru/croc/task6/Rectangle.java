@@ -26,10 +26,7 @@ public class Rectangle extends Figure{
         y1 = in.nextInt();
         x2 = in.nextInt();
         y2 = in.nextInt();
-        return " (<" + x1 +">, <" + y1 + ">), (<" + x2 + ">, <" + y2 +">): ";
-    }
-    public String shapeName(){
-        return "R";
+        return "R (<" + x1 +">, <" + y1 + ">), (<" + x2 + ">, <" + y2 +">): ";
     }
 
     @Override

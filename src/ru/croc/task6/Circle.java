@@ -22,10 +22,7 @@ public class Circle extends Figure{
             System.out.println("Radius less than zero");
             R = in.nextInt();
         }
-        return " (<" + x +">, <" + y + ">), <"+ R + ">: ";
-    }
-    public String shapeName(){
-        return "C";
+        return "C (<" + x +">, <" + y + ">), <"+ R + ">: ";
     }
 
     @Override
