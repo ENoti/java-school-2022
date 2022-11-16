@@ -7,10 +7,7 @@ public class Figure {
         this.x = 0;
         this.y = 0;
     }
-    protected String shapeName(){
-        return "F";
-    }
     protected String coordinateInformation(){
-        return " (<" + x +">, <" + y + ">): ";
+        return "F (<" + x +">, <" + y + ">): ";
     }
 }

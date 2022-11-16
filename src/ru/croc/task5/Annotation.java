@@ -3,15 +3,15 @@ import java.util.Scanner;
 
 public class Annotation {
     private final Figure figure;
-    private final String Inscription;
+    private final String inscription;
     Annotation(Figure figure){
         this.figure = figure;
         Scanner in = new Scanner(System.in);
         System.out.println("Enter your text: ");
-        this.Inscription = in.nextLine();
+        this.inscription = in.nextLine();
     }
     @Override
     public String toString() {
-        return figure.shapeName() + figure.coordinateInformation() + Inscription;
+        return figure.coordinateInformation() + inscription;
     }
 }

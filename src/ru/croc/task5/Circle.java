@@ -13,9 +13,6 @@ public class Circle extends Figure{
             System.out.println("Radius less than zero");
             r = in.nextInt();
         }
-        return " (<" + x +">, <" + y + ">), <"+ r + ">: ";
-    }
-    public String shapeName(){
-        return "C";
+        return "C (<" + x +">, <" + y + ">), <"+ r + ">: ";
     }
 }
