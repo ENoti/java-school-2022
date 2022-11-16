@@ -4,7 +4,7 @@ public class IllegalMoveException extends Exception {
     private final ChessPosition pres;
     private final ChessPosition next;
 
-    public IllegalMoveException(ChessPosition pres, ChessPosition next, IllegalArgumentException e) {
+    public IllegalMoveException(ChessPosition pres, ChessPosition next) {
         this.pres = pres;
         this.next = next;
     }

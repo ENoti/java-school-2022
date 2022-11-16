@@ -9,6 +9,9 @@ public class Task7 {
             if(ChessPosition.checkMove(nowPos))
                 System.out.println("OK");
         }
+        catch (IllegalBoard ex) {
+            System.out.println(ex.getMessage());
+        }
         catch (IllegalMoveException ex) {
             System.out.println(ex.getMessage());
         }
