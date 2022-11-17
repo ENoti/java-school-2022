@@ -48,17 +48,33 @@ public class Task4 {
     }
 
     public static void main(String[] args) {
-        String str = "";
-        Scanner scanner = new Scanner(System.in);
-        while (scanner.hasNextLine()) { // До нажатия Ctrl + D
-            str = str + "\n" + scanner.nextLine();
+        String str = """
+            /*
+             * My first ever program in Java!
+             */
+            class Hello { // class body starts here\s
+             \s
+              /* main method */
+              public static void main(String[] args/* we put command line arguments here*/) {
+                // this line prints my first greeting to the screen
+                System.out.println("Hi!"); // :)
+              }
+            } // the end
+            // to be continued...
+            """;
             str = asteriskBig(str);
             str = asteriskSlash(str);
             str = doubleSlash(str);
-        }
-        scanner.close();
-        System.out.println(str);
-
+            System.out.println(str);
+//        String str = "";
+//        Scanner scanner = new Scanner(System.in);
+//        while (scanner.hasNextLine()) { // До нажатия Ctrl + D
+//            str = str + "\n" + scanner.nextLine();
+//            str = asteriskBig(str);
+//            str = asteriskSlash(str);
+//            str = doubleSlash(str);
+//        }
+//        scanner.close();
 
     }
 }
