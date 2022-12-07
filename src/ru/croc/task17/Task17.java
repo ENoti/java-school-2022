@@ -6,15 +6,15 @@ import java.io.IOException;
 import java.sql.*;
 
 public class Task17 {
-    static final String DATABASE_URL = "jdbc:h2:C:/Users/dazhu/IdeaProjects/java-school-2022-Dazhuk/meow";
+    static final String DATABASE_URL = "jdbc:h2:C:/Users/dazhu/IdeaProjects/java-school-2022-DazhukNew/meow";
     static final String JDBC_DRIVER = "org.h2.Driver";
 
     public static void createTables(Connection connection) throws SQLException {
         try (Statement statement = connection.createStatement()){
             String SQL = """
                     CREATE TABLE "USER"(ID INT PRIMARY KEY, NAME VARCHAR(255));
-                    CREATE TABLE "PRODUCTS"(ARTICLE VARCHAR(255) PRIMARY KEY,OBJECT VARCHAR(255), PRICE INTEGER);
-                    CREATE TABLE "ORDER"(ID INT, FOREIGN KEY(ID) REFERENCES "USER"(ID) ON DELETE CASCADE, ARTICLE INT, FOREIGN KEY(ARTICLE) REFERENCES PRODUCTS(ARTICLE) ON DELETE CASCADE);""";
+                    CREATE TABLE "PRODUCTS"(ARTICLE VARCHAR(255) PRIMARY KEY,"OBJECT" VARCHAR(255), PRICE INTEGER);
+                    CREATE TABLE "ORDER"(ID INT/*, FOREIGN KEY(ID) REFERENCES "USER"(ID) ON DELETE CASCADE*/, ARTICLE VARCHAR(255)/*, FOREIGN KEY(ARTICLE) REFERENCES PRODUCTS(ARTICLE)*/);""";
 
                     statement.execute(SQL);
         }
@@ -37,10 +37,10 @@ public class Task17 {
     }
 
     public static void updateThree(Connection connection) throws SQLException {
-        try (Statement statement = connection.createStatement()){
+        try (Statement statement = connection.createStatement()) {
             String SQL = "SELECT \"USER\".ID, PRODUCTS.ARTICLE " +
-                    "FROM \"ORDER\" JOIN PRODUCTS ON \"ORDER\".ARTICLE=PRODUCTS.ARTICLE" +
-                    " JOIN \"USER\" ON \"ORDER\".ID=\"USER\".ID;";
+                    "FROM \"ORDER\" JOIN PRODUCTS ON \"ORDER\".ARTICLE = PRODUCTS.ARTICLE" +
+                    " JOIN \"USER\" ON \"ORDER\".ID = \"USER\".ID;";
             statement.execute(SQL);
         }
     }
@@ -70,12 +70,12 @@ public class Task17 {
         String line = reader.readLine();
         while (line != null) {
             String[] fields = line.split(",");
-            //updateOne(connection, "\"ORDER\"", " (ID, ARTICLE)", fields[0], "'" + fields[2] + "'");
+            //updateThree(connection);
+            updateOne(connection, "\"ORDER\"", " (ID, ARTICLE)", fields[0], "'" + fields[2] + "'");
             if(!hasID(connection, "'" + fields[0] + "'"))
                 updateOne(connection, "\"USER\"", " (ID, NAME)", fields[0], "'" + fields[1] + "'");
             if(!hasArticle(connection, "'" + fields[2] + "'"))
                 updateTwo(connection, "PRODUCTS",  " (ARTICLE, OBJECT, PRICE)", "'" + fields[2] + "'","'" +  fields[3] + "'", fields[4]);
-            updateThree(connection);
             line = reader.readLine();
         }
     }
